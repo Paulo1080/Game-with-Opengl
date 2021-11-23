@@ -1,0 +1,4 @@
+﻿  Origem1.c
+C:\Users\Paulo_Vi\Desktop\AulasCG\projetoCGbase\projetoCGbase\Origem1.c(79,30): warning C4013: 'cos' indefinido; assumindo extern retornando int
+C:\Users\Paulo_Vi\Desktop\AulasCG\projetoCGbase\projetoCGbase\Origem1.c(80,30): warning C4013: 'sin' indefinido; assumindo extern retornando int
+  projetoCGbase.vcxproj -> C:\Users\Paulo_Vi\Desktop\AulasCG\projetoCGbase\Debug\projetoCGbase.exe

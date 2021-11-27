@@ -473,7 +473,7 @@ void displayMe(void)
 
 
 //callback de teclado
-/*static void Key(unsigned char key, int x, int y)
+static void Key(unsigned char key, int x, int y)
 {
     //automatic increment c - cima = 1, v - baixo = 2, x - esquerda = 3, b direita = 4
     switch (key) {
@@ -502,7 +502,7 @@ void displayMe(void)
         if (p1X >= -0.7) p1X -= 0.1;
         glutPostRedisplay();
         break;
-    case 'u':
+ /*   case 'u':
         ballx += 0.01;
         bally += 0.01;
         printf("ballx %f, bally %f, %d \n", ballx, bally, collisionDetec());
@@ -530,9 +530,9 @@ void displayMe(void)
         exit(0);
     }
 }
-
-
 */
+
+
 int main(int argc, char** argv)
 {
     srand(time(0));

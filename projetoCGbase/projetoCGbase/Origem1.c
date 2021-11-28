@@ -98,7 +98,7 @@ void desenhaQ() {
 
     //Player
     glColor3f(255.0, 255.0, 0.0);
-    glTranslatef(0.0, p1X, 0.0);
+    glTranslatef(p1X, 0.0, 0.0);
     glBegin(GL_POLYGON);
     glVertex3f(0.1, -0.85, 0.0);
     glVertex3f(-0.1, -0.85, 0.0);
@@ -489,20 +489,25 @@ static void Key(unsigned char key, int x, int y)
     case 'b':
         automatinc = 4;
         break;
-    case 'w':
-        if (p1X <= 0.6) {
+    case 's':
+       if (p1X <= 0.7) {
             p1X += 0.1;
         }
         else {
-            p1X = 0.7;
+            p1X = 0.8;
         }
         glutPostRedisplay();
         break;
-    case 's':
-        if (p1X >= -0.7) p1X -= 0.1;
+    case 'a':
+        if (p1X >= -0.7) {
+             p1X -= 0.1;
+        }
+        else {
+            p1X = -0.8;
+        }
         glutPostRedisplay();
         break;
- /*   case 'u':
+     case 'u':
         ballx += 0.01;
         bally += 0.01;
         printf("ballx %f, bally %f, %d \n", ballx, bally, collisionDetec());
@@ -530,7 +535,7 @@ static void Key(unsigned char key, int x, int y)
         exit(0);
     }
 }
-*/
+
 
 
 int main(int argc, char** argv)
@@ -543,7 +548,7 @@ int main(int argc, char** argv)
     glutCreateWindow("Transformadas");
     ballMove();
     glutDisplayFunc(displayMe);
-    //glutKeyboardUpFunc(Key);
+    glutKeyboardUpFunc(Key);
     glutMainLoop();
     return 0;
 }

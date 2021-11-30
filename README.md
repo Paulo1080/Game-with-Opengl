@@ -1,1 +1,1 @@
-# jogo-em-opengl, utilizando glut
+# jogo-em-opengl, utilizando glut.

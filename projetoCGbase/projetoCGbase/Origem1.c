@@ -14,9 +14,9 @@ int automatinc = 7;
 int collisionDetec() {
 
     int retorno = 0;
-    if ((ballx <= -0.87 && ballx >= -0.91) || (ballx >= 0.87 && ballx <= 0.91)) retorno = 1; // bordaX
-    else if ((bally <= -0.87 && bally >= -0.89) || (bally >= 0.87 && bally <= 89)) retorno = 1; //borda Y
-    else if ((bally <= -0.77 && bally >= -0.8) && (bally >= (-0.20 + p1X) && bally <= (0.20 + p1X))) retorno = 3; //player
+    if ((ballx <= -0.87 && ballx >= -0.89) || (ballx >= 0.87 && ballx <= 0.89)) retorno = 1; // bordaX
+    else if ((bally <= -0.87 && bally >= -0.89) || (bally >= 0.87 && bally <= 0.89)) retorno = 1; //borda Y
+    else if ((ballx <= 0.1 && bally >= -0.01) && (bally >= (-0.8 + p1X) && bally <= (0.85 + p1X))) retorno = 3; //player
 
 
     return retorno;
@@ -88,379 +88,386 @@ void desenhaQ() {
 
     //bordas
     glBegin(GL_LINE_STRIP);
-        glColor3f(255.0, 255.0, 255.0);
-        glVertex3f(-0.9, 0.9, 0.0);
-        glVertex3f(0.9, 0.9, 0.0);
-        glVertex3f(0.9, -0.9, 0.0);
-        glVertex3f(-0.9, -0.9, 0.0);
-        glVertex3f(-0.9, 0.9, 0.0);
+    glColor3f(255.0, 255.0, 255.0);
+    glVertex3f(-0.9, 0.9, 0.0);
+    glVertex3f(0.9, 0.9, 0.0);
+    glVertex3f(0.9, -0.9, 0.0);
+    glVertex3f(-0.9, -0.9, 0.0);
+    glVertex3f(-0.9, 0.9, 0.0);
     glEnd();
 
-  
+
 
     //coluna1
     glBegin(GL_POLYGON);
-        glColor3f(0.0, 255.0, 255.0);
-        glVertex3f(-0.7, 0.8, 0.0);
-        glVertex3f(-0.8, 0.8, 0.0);
-        glVertex3f(-0.8, 0.7, 0.0);
-        glVertex3f(-0.7, 0.7, 0.0);
+    glColor3f(0.0, 255.0, 255.0);
+    glVertex3f(-0.7, 0.8, 0.0);
+    glVertex3f(-0.8, 0.8, 0.0);
+    glVertex3f(-0.8, 0.7, 0.0);
+    glVertex3f(-0.7, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.7, 0.69, 0.0);
-        glVertex3f(-0.8, 0.69, 0.0);
-        glVertex3f(-0.8, 0.59, 0.0);
-        glVertex3f(-0.7, 0.59, 0.0);
+    glVertex3f(-0.7, 0.69, 0.0);
+    glVertex3f(-0.8, 0.69, 0.0);
+    glVertex3f(-0.8, 0.59, 0.0);
+    glVertex3f(-0.7, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.7, 0.58, 0.0);
-        glVertex3f(-0.8, 0.58, 0.0);
-        glVertex3f(-0.8, 0.48, 0.0);
-        glVertex3f(-0.7, 0.48, 0.0);
+    glVertex3f(-0.7, 0.58, 0.0);
+    glVertex3f(-0.8, 0.58, 0.0);
+    glVertex3f(-0.8, 0.48, 0.0);
+    glVertex3f(-0.7, 0.48, 0.0);
     glEnd();
 
     //coluna2
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.59, 0.8, 0.0);
-        glVertex3f(-0.69, 0.8, 0.0);
-        glVertex3f(-0.69, 0.7, 0.0);
-        glVertex3f(-0.59, 0.7, 0.0);
+    glVertex3f(-0.59, 0.8, 0.0);
+    glVertex3f(-0.69, 0.8, 0.0);
+    glVertex3f(-0.69, 0.7, 0.0);
+    glVertex3f(-0.59, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.59, 0.69, 0.0);
-        glVertex3f(-0.69, 0.69, 0.0);
-        glVertex3f(-0.69, 0.59, 0.0);
-        glVertex3f(-0.59, 0.59, 0.0);
+    glVertex3f(-0.59, 0.69, 0.0);
+    glVertex3f(-0.69, 0.69, 0.0);
+    glVertex3f(-0.69, 0.59, 0.0);
+    glVertex3f(-0.59, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.59, 0.58, 0.0);
-        glVertex3f(-0.69, 0.58, 0.0);
-        glVertex3f(-0.69, 0.48, 0.0);
-        glVertex3f(-0.59, 0.48, 0.0);
+    glVertex3f(-0.59, 0.58, 0.0);
+    glVertex3f(-0.69, 0.58, 0.0);
+    glVertex3f(-0.69, 0.48, 0.0);
+    glVertex3f(-0.59, 0.48, 0.0);
     glEnd();
 
     //coluna3
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.48, 0.8, 0.0);
-        glVertex3f(-0.58, 0.8, 0.0);
-        glVertex3f(-0.58, 0.7, 0.0);
-        glVertex3f(-0.48, 0.7, 0.0);
+    glVertex3f(-0.48, 0.8, 0.0);
+    glVertex3f(-0.58, 0.8, 0.0);
+    glVertex3f(-0.58, 0.7, 0.0);
+    glVertex3f(-0.48, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.48, 0.69, 0.0);
-        glVertex3f(-0.58, 0.69, 0.0);
-        glVertex3f(-0.58, 0.59, 0.0);
-        glVertex3f(-0.48, 0.59, 0.0);
+    glVertex3f(-0.48, 0.69, 0.0);
+    glVertex3f(-0.58, 0.69, 0.0);
+    glVertex3f(-0.58, 0.59, 0.0);
+    glVertex3f(-0.48, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.48, 0.58, 0.0);
-        glVertex3f(-0.58, 0.58, 0.0);
-        glVertex3f(-0.58, 0.48, 0.0);
-        glVertex3f(-0.48, 0.48, 0.0);
-    glEnd();
-
-    // coluna4
-
-    glBegin(GL_POLYGON);
-        glVertex3f(-0.37, 0.8, 0.0);
-        glVertex3f(-0.47, 0.8, 0.0);
-        glVertex3f(-0.47, 0.7, 0.0);
-        glVertex3f(-0.37, 0.7, 0.0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-        glVertex3f(-0.37, 0.69, 0.0);
-        glVertex3f(-0.47, 0.69, 0.0);
-        glVertex3f(-0.47, 0.59, 0.0);
-        glVertex3f(-0.37, 0.59, 0.0);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-        glVertex3f(-0.37, 0.58, 0.0);
-        glVertex3f(-0.47, 0.58, 0.0);
-        glVertex3f(-0.47, 0.48, 0.0);
-        glVertex3f(-0.37, 0.48, 0.0);
+    glVertex3f(-0.48, 0.58, 0.0);
+    glVertex3f(-0.58, 0.58, 0.0);
+    glVertex3f(-0.58, 0.48, 0.0);
+    glVertex3f(-0.48, 0.48, 0.0);
     glEnd();
 
     // coluna4
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.26, 0.8, 0.0);
-        glVertex3f(-0.36, 0.8, 0.0);
-        glVertex3f(-0.36, 0.7, 0.0);
-        glVertex3f(-0.26, 0.7, 0.0);
+    glVertex3f(-0.37, 0.8, 0.0);
+    glVertex3f(-0.47, 0.8, 0.0);
+    glVertex3f(-0.47, 0.7, 0.0);
+    glVertex3f(-0.37, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.26, 0.69, 0.0);
-        glVertex3f(-0.36, 0.69, 0.0);
-        glVertex3f(-0.36, 0.59, 0.0);
-        glVertex3f(-0.26, 0.59, 0.0);
+    glVertex3f(-0.37, 0.69, 0.0);
+    glVertex3f(-0.47, 0.69, 0.0);
+    glVertex3f(-0.47, 0.59, 0.0);
+    glVertex3f(-0.37, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.26, 0.58, 0.0);
-        glVertex3f(-0.36, 0.58, 0.0);
-        glVertex3f(-0.36, 0.48, 0.0);
-        glVertex3f(-0.26, 0.48, 0.0);
+    glVertex3f(-0.37, 0.58, 0.0);
+    glVertex3f(-0.47, 0.58, 0.0);
+    glVertex3f(-0.47, 0.48, 0.0);
+    glVertex3f(-0.37, 0.48, 0.0);
+    glEnd();
+
+    // coluna4
+
+    glBegin(GL_POLYGON);
+    glVertex3f(-0.26, 0.8, 0.0);
+    glVertex3f(-0.36, 0.8, 0.0);
+    glVertex3f(-0.36, 0.7, 0.0);
+    glVertex3f(-0.26, 0.7, 0.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex3f(-0.26, 0.69, 0.0);
+    glVertex3f(-0.36, 0.69, 0.0);
+    glVertex3f(-0.36, 0.59, 0.0);
+    glVertex3f(-0.26, 0.59, 0.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex3f(-0.26, 0.58, 0.0);
+    glVertex3f(-0.36, 0.58, 0.0);
+    glVertex3f(-0.36, 0.48, 0.0);
+    glVertex3f(-0.26, 0.48, 0.0);
     glEnd();
 
     // coluna5
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.15, 0.8, 0.0);
-        glVertex3f(-0.25, 0.8, 0.0);
-        glVertex3f(-0.25, 0.7, 0.0);
-        glVertex3f(-0.15, 0.7, 0.0);
+    glVertex3f(-0.15, 0.8, 0.0);
+    glVertex3f(-0.25, 0.8, 0.0);
+    glVertex3f(-0.25, 0.7, 0.0);
+    glVertex3f(-0.15, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.15, 0.69, 0.0);
-        glVertex3f(-0.25, 0.69, 0.0);
-        glVertex3f(-0.25, 0.59, 0.0);
-        glVertex3f(-0.15, 0.59, 0.0);
+    glVertex3f(-0.15, 0.69, 0.0);
+    glVertex3f(-0.25, 0.69, 0.0);
+    glVertex3f(-0.25, 0.59, 0.0);
+    glVertex3f(-0.15, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.15, 0.58, 0.0);
-        glVertex3f(-0.25, 0.58, 0.0);
-        glVertex3f(-0.25, 0.48, 0.0);
-        glVertex3f(-0.15, 0.48, 0.0);
+    glVertex3f(-0.15, 0.58, 0.0);
+    glVertex3f(-0.25, 0.58, 0.0);
+    glVertex3f(-0.25, 0.48, 0.0);
+    glVertex3f(-0.15, 0.48, 0.0);
     glEnd();
 
     // coluna6
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.04, 0.8, 0.0);
-        glVertex3f(-0.14, 0.8, 0.0);
-        glVertex3f(-0.14, 0.7, 0.0);
-        glVertex3f(-0.04, 0.7, 0.0);
+    glVertex3f(-0.04, 0.8, 0.0);
+    glVertex3f(-0.14, 0.8, 0.0);
+    glVertex3f(-0.14, 0.7, 0.0);
+    glVertex3f(-0.04, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.04, 0.69, 0.0);
-        glVertex3f(-0.14, 0.69, 0.0);
-        glVertex3f(-0.14, 0.59, 0.0);
-        glVertex3f(-0.04, 0.59, 0.0);
+    glVertex3f(-0.04, 0.69, 0.0);
+    glVertex3f(-0.14, 0.69, 0.0);
+    glVertex3f(-0.14, 0.59, 0.0);
+    glVertex3f(-0.04, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(-0.04, 0.58, 0.0);
-        glVertex3f(-0.14, 0.58, 0.0);
-        glVertex3f(-0.14, 0.48, 0.0);
-        glVertex3f(-0.04, 0.48, 0.0);
+    glVertex3f(-0.04, 0.58, 0.0);
+    glVertex3f(-0.14, 0.58, 0.0);
+    glVertex3f(-0.14, 0.48, 0.0);
+    glVertex3f(-0.04, 0.48, 0.0);
     glEnd();
 
     // coluna7 
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.07, 0.8, 0.0);
-        glVertex3f(-0.03, 0.8, 0.0);
-        glVertex3f(-0.03, 0.7, 0.0);
-        glVertex3f(0.07, 0.7, 0.0);
+    glVertex3f(0.07, 0.8, 0.0);
+    glVertex3f(-0.03, 0.8, 0.0);
+    glVertex3f(-0.03, 0.7, 0.0);
+    glVertex3f(0.07, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.07, 0.69, 0.0);
-        glVertex3f(-0.03, 0.69, 0.0);
-        glVertex3f(-0.03, 0.59, 0.0);
-        glVertex3f(0.07, 0.59, 0.0);
+    glVertex3f(0.07, 0.69, 0.0);
+    glVertex3f(-0.03, 0.69, 0.0);
+    glVertex3f(-0.03, 0.59, 0.0);
+    glVertex3f(0.07, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.07, 0.58, 0.0);
-        glVertex3f(-0.03, 0.58, 0.0);
-        glVertex3f(-0.03, 0.48, 0.0);
-        glVertex3f(0.07, 0.48, 0.0);
+    glVertex3f(0.07, 0.58, 0.0);
+    glVertex3f(-0.03, 0.58, 0.0);
+    glVertex3f(-0.03, 0.48, 0.0);
+    glVertex3f(0.07, 0.48, 0.0);
     glEnd();
 
     // coluna8 
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.18, 0.8, 0.0);
-        glVertex3f(0.08, 0.8, 0.0);
-        glVertex3f(0.08, 0.7, 0.0);
-        glVertex3f(0.18, 0.7, 0.0);
+    glVertex3f(0.18, 0.8, 0.0);
+    glVertex3f(0.08, 0.8, 0.0);
+    glVertex3f(0.08, 0.7, 0.0);
+    glVertex3f(0.18, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.18, 0.69, 0.0);
-        glVertex3f(0.08, 0.69, 0.0);
-        glVertex3f(0.08, 0.59, 0.0);
-        glVertex3f(0.18, 0.59, 0.0);
+    glVertex3f(0.18, 0.69, 0.0);
+    glVertex3f(0.08, 0.69, 0.0);
+    glVertex3f(0.08, 0.59, 0.0);
+    glVertex3f(0.18, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.18, 0.58, 0.0);
-        glVertex3f(0.08, 0.58, 0.0);
-        glVertex3f(0.08, 0.48, 0.0);
-        glVertex3f(0.18, 0.48, 0.0);
+    glVertex3f(0.18, 0.58, 0.0);
+    glVertex3f(0.08, 0.58, 0.0);
+    glVertex3f(0.08, 0.48, 0.0);
+    glVertex3f(0.18, 0.48, 0.0);
     glEnd();
 
     // coluna9 
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.29, 0.8, 0.0);
-        glVertex3f(0.19, 0.8, 0.0);
-        glVertex3f(0.19, 0.7, 0.0);
-        glVertex3f(0.29, 0.7, 0.0);
+    glVertex3f(0.29, 0.8, 0.0);
+    glVertex3f(0.19, 0.8, 0.0);
+    glVertex3f(0.19, 0.7, 0.0);
+    glVertex3f(0.29, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.29, 0.69, 0.0);
-        glVertex3f(0.19, 0.69, 0.0);
-        glVertex3f(0.19, 0.59, 0.0);
-        glVertex3f(0.29, 0.59, 0.0);
+    glVertex3f(0.29, 0.69, 0.0);
+    glVertex3f(0.19, 0.69, 0.0);
+    glVertex3f(0.19, 0.59, 0.0);
+    glVertex3f(0.29, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.29, 0.58, 0.0);
-        glVertex3f(0.19, 0.58, 0.0);
-        glVertex3f(0.19, 0.48, 0.0);
-        glVertex3f(0.29, 0.48, 0.0);
+    glVertex3f(0.29, 0.58, 0.0);
+    glVertex3f(0.19, 0.58, 0.0);
+    glVertex3f(0.19, 0.48, 0.0);
+    glVertex3f(0.29, 0.48, 0.0);
     glEnd();
 
     // coluna10 
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.40, 0.8, 0.0);
-        glVertex3f(0.30, 0.8, 0.0);
-        glVertex3f(0.30, 0.7, 0.0);
-        glVertex3f(0.40, 0.7, 0.0);
+    glVertex3f(0.40, 0.8, 0.0);
+    glVertex3f(0.30, 0.8, 0.0);
+    glVertex3f(0.30, 0.7, 0.0);
+    glVertex3f(0.40, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.40, 0.69, 0.0);
-        glVertex3f(0.30, 0.69, 0.0);
-        glVertex3f(0.30, 0.59, 0.0);
-        glVertex3f(0.40, 0.59, 0.0);
+    glVertex3f(0.40, 0.69, 0.0);
+    glVertex3f(0.30, 0.69, 0.0);
+    glVertex3f(0.30, 0.59, 0.0);
+    glVertex3f(0.40, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.40, 0.58, 0.0);
-        glVertex3f(0.30, 0.58, 0.0);
-        glVertex3f(0.30, 0.48, 0.0);
-        glVertex3f(0.40, 0.48, 0.0);
+    glVertex3f(0.40, 0.58, 0.0);
+    glVertex3f(0.30, 0.58, 0.0);
+    glVertex3f(0.30, 0.48, 0.0);
+    glVertex3f(0.40, 0.48, 0.0);
     glEnd();
 
     // coluna11
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.51, 0.8, 0.0);
-        glVertex3f(0.41, 0.8, 0.0);
-        glVertex3f(0.41, 0.7, 0.0);
-        glVertex3f(0.51, 0.7, 0.0);
+    glVertex3f(0.51, 0.8, 0.0);
+    glVertex3f(0.41, 0.8, 0.0);
+    glVertex3f(0.41, 0.7, 0.0);
+    glVertex3f(0.51, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.51, 0.69, 0.0);
-        glVertex3f(0.41, 0.69, 0.0);
-        glVertex3f(0.41, 0.59, 0.0);
-        glVertex3f(0.51, 0.59, 0.0);
+    glVertex3f(0.51, 0.69, 0.0);
+    glVertex3f(0.41, 0.69, 0.0);
+    glVertex3f(0.41, 0.59, 0.0);
+    glVertex3f(0.51, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.51, 0.58, 0.0);
-        glVertex3f(0.41, 0.58, 0.0);
-        glVertex3f(0.41, 0.48, 0.0);
-        glVertex3f(0.51, 0.48, 0.0);
+    glVertex3f(0.51, 0.58, 0.0);
+    glVertex3f(0.41, 0.58, 0.0);
+    glVertex3f(0.41, 0.48, 0.0);
+    glVertex3f(0.51, 0.48, 0.0);
     glEnd();
 
     // coluna12
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.62, 0.8, 0.0);
-        glVertex3f(0.52, 0.8, 0.0);
-        glVertex3f(0.52, 0.7, 0.0);
-        glVertex3f(0.62, 0.7, 0.0);
+    glVertex3f(0.62, 0.8, 0.0);
+    glVertex3f(0.52, 0.8, 0.0);
+    glVertex3f(0.52, 0.7, 0.0);
+    glVertex3f(0.62, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.62, 0.69, 0.0);
-        glVertex3f(0.52, 0.69, 0.0);
-        glVertex3f(0.52, 0.59, 0.0);
-        glVertex3f(0.62, 0.59, 0.0);
+    glVertex3f(0.62, 0.69, 0.0);
+    glVertex3f(0.52, 0.69, 0.0);
+    glVertex3f(0.52, 0.59, 0.0);
+    glVertex3f(0.62, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.62, 0.58, 0.0);
-        glVertex3f(0.52, 0.58, 0.0);
-        glVertex3f(0.52, 0.48, 0.0);
-        glVertex3f(0.62, 0.48, 0.0);
+    glVertex3f(0.62, 0.58, 0.0);
+    glVertex3f(0.52, 0.58, 0.0);
+    glVertex3f(0.52, 0.48, 0.0);
+    glVertex3f(0.62, 0.48, 0.0);
     glEnd();
 
     // coluna13
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.73, 0.8, 0.0);
-        glVertex3f(0.63, 0.8, 0.0);
-        glVertex3f(0.63, 0.7, 0.0);
-        glVertex3f(0.73, 0.7, 0.0);
+    glVertex3f(0.73, 0.8, 0.0);
+    glVertex3f(0.63, 0.8, 0.0);
+    glVertex3f(0.63, 0.7, 0.0);
+    glVertex3f(0.73, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.73, 0.69, 0.0);
-        glVertex3f(0.63, 0.69, 0.0);
-        glVertex3f(0.63, 0.59, 0.0);
-        glVertex3f(0.73, 0.59, 0.0);
+    glVertex3f(0.73, 0.69, 0.0);
+    glVertex3f(0.63, 0.69, 0.0);
+    glVertex3f(0.63, 0.59, 0.0);
+    glVertex3f(0.73, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.73, 0.58, 0.0);
-        glVertex3f(0.63, 0.58, 0.0);
-        glVertex3f(0.63, 0.48, 0.0);
-        glVertex3f(0.73, 0.48, 0.0);
+    glVertex3f(0.73, 0.58, 0.0);
+    glVertex3f(0.63, 0.58, 0.0);
+    glVertex3f(0.63, 0.48, 0.0);
+    glVertex3f(0.73, 0.48, 0.0);
     glEnd();
 
     // coluna14
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.84, 0.8, 0.0);
-        glVertex3f(0.74, 0.8, 0.0);
-        glVertex3f(0.74, 0.7, 0.0);
-        glVertex3f(0.84, 0.7, 0.0);
+    glVertex3f(0.84, 0.8, 0.0);
+    glVertex3f(0.74, 0.8, 0.0);
+    glVertex3f(0.74, 0.7, 0.0);
+    glVertex3f(0.84, 0.7, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.84, 0.69, 0.0);
-        glVertex3f(0.74, 0.69, 0.0);
-        glVertex3f(0.74, 0.59, 0.0);
-        glVertex3f(0.84, 0.59, 0.0);
+    glVertex3f(0.84, 0.69, 0.0);
+    glVertex3f(0.74, 0.69, 0.0);
+    glVertex3f(0.74, 0.59, 0.0);
+    glVertex3f(0.84, 0.59, 0.0);
     glEnd();
 
     glBegin(GL_POLYGON);
-        glVertex3f(0.84, 0.58, 0.0);
-        glVertex3f(0.74, 0.58, 0.0);
-        glVertex3f(0.74, 0.48, 0.0);
-        glVertex3f(0.84, 0.48, 0.0);
+    glVertex3f(0.84, 0.58, 0.0);
+    glVertex3f(0.74, 0.58, 0.0);
+    glVertex3f(0.74, 0.48, 0.0);
+    glVertex3f(0.84, 0.48, 0.0);
     glEnd();
 
     //Player
+
+    glColor3f(255.0, 255.0, 0.0);
+    glTranslatef(p1X, 0.0, 0.0);
     glBegin(GL_POLYGON);
-        glColor3f(255.0, 255.0, 0.0);
-        glTranslatef(p1X, 0.0, 0.0);
-        glVertex3f(0.1, -0.85, 0.0);
-        glVertex3f(-0.1, -0.85, 0.0);
-        glVertex3f(-0.1, -0.8, 0.0);
-        glVertex3f(0.1, -0.8, 0.0);
+    glVertex3f(0.1, -0.85, 0.0);
+    glVertex3f(-0.1, -0.85, 0.0);
+    glVertex3f(-0.1, -0.8, 0.0);
+    glVertex3f(0.1, -0.8, 0.0);
     glEnd();
+
 
     //bola
 
     glLoadIdentity();
-    glColor3f(255.0, 255.0, 255.0);
+    glColor3f(255.0, 0.0, 0.0);
     glTranslatef(ballx, bally, 0.0);
     drawHollowCircle(0.0, 0.0, 0.02);
-    
-    
+    glBegin(GL_POLYGON);
+    glVertex3f(0.01, -0.45, 0.0);
+    glVertex3f(-0.01, -0.45, 0.0);
+    glVertex3f(-0.01, -0.4, 0.0);
+    glVertex3f(0.01, -0.4, 0.0);
+    glEnd();
+
 
 }
 
@@ -493,7 +500,7 @@ static void Key(unsigned char key, int x, int y)
         automatinc = 4;
         break;
     case 's':
-       if (p1X <= 0.7) {
+        if (p1X <= 0.7) {
             p1X += 0.1;
         }
         else {
@@ -503,14 +510,14 @@ static void Key(unsigned char key, int x, int y)
         break;
     case 'a':
         if (p1X >= -0.7) {
-             p1X -= 0.1;
+            p1X -= 0.1;
         }
         else {
             p1X = -0.8;
         }
         glutPostRedisplay();
         break;
-     case 'u':
+    case 'u':
         ballx += 0.01;
         bally += 0.01;
         printf("ballx %f, bally %f, %d \n", ballx, bally, collisionDetec());

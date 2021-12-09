@@ -1,1 +1,1 @@
-# jogo-em-opengl, utilizando glut.
+Jogo em c, com bibliotecas openGl.

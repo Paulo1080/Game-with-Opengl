@@ -9,13 +9,13 @@ float p1X = 0.0; //controlar o player
 float ballx = 0.0;
 float bally = 0.0;
 float angulo = 0.0;
-int automatinc = 7;
+int automatinc = 3;
 
 int collisionDetec() {
 
     int retorno = 0;
     if ((ballx <= -0.87 && ballx >= -0.89) || (ballx >= 0.87 && ballx <= 0.89)) retorno = 1; // bordaX
-    else if ((bally <= -0.87 && bally >= -0.89) || (bally >= 0.87 && bally <= 0.89)) retorno = 1; //borda Y
+    else if ((bally <= -0.87 && bally >= -0.89) || (bally >= 0.87 && bally <= 0.89)) retorno = 2; //borda Y
     else if ((ballx <= 0.1 && bally >= -0.01) && (bally >= (-0.8 + p1X) && bally <= (0.85 + p1X))) retorno = 3; //player
 
 
@@ -23,35 +23,23 @@ int collisionDetec() {
 }
 
 void ballMove() {
-    //automatic increment c - cima = 1, v - baixo = 2, x - esquerda = 3, b direita = 4
-    if (automatinc == 1 && ballx >= -0.87) {
-        ballx -= 0.0003;
-    }
-    else if (automatinc == 2 && ballx <= 0.87) {
-        ballx += 0.0003;
-    }
-    else if (automatinc == 3 && bally >= -0.87) {
-        bally -= 0.0005;
-    }
-    else if (automatinc == 4 && bally <= 0.87) {
-        bally += 0.0005;
-    }
-    else if (automatinc == 5 && ballx <= 0.87 && bally <= 0.87) {
+    
+    if (automatinc == 1 && ballx <= 0.9 && bally <= 1.3) {
         int Inc = rand() % 6;
         ballx += 0.0005;
         bally += 0.0001 * Inc;
     }
-    else if (automatinc == 6 && ballx >= -0.87 && bally >= -0.87) {
+    else if (automatinc == 2 && ballx >= -0.9 && bally >= -0.9) {
         int Inc = rand() % 6;
         ballx -= 0.0005;
         bally -= 0.0001 * Inc;
     }
-    else if (automatinc == 7 && ballx <= 0.87 && bally >= -0.87) {
+    else if (automatinc == 3 && ballx <= 0.9 && bally >= -0.9) {
         int Inc = rand() % 6;
         ballx += 0.0005;
         bally -= 0.0001 * Inc;
     }
-    else if (automatinc == 8 && ballx >= -0.87 && bally <= 0.87) {
+    else if (automatinc == 4 && ballx >= -0.9 && bally <= 1.3) {
         int Inc = rand() % 6;
         ballx -= 0.0005;
         bally += 0.0001 * Inc;
@@ -59,9 +47,7 @@ void ballMove() {
     else {
         automatinc = (rand() % 100) % 9;
     }
-
-    //if (ballx >= -0.7 && ballx <= 0.7) ballx += 0.0001;
-    //if (bally >= -0.7 && bally <= 0.7) bally += 0.0001;
+ 
     glutPostRedisplay();
 }
 
